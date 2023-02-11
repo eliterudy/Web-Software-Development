@@ -1,0 +1,237 @@
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}
+
+sup {
+  pointer-events: none;
+}
+
+sub {
+  pointer-events: none;
+}
+
+.calculatorBody {
+  margin: 30px;
+  width: 580px;
+  height: 320px;
+  display: grid;
+  border-radius: 10px;
+  background-color: #5e5e5c;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 15px repeat(6, 1fr);
+  grid-template-areas:
+    "toolbar toolbar toolbar toolbar toolbar toolbar toolbar toolbar toolbar toolbar "
+    "disp disp disp disp disp disp disp disp disp disp "
+    "bracket_left bracket_right mc m_plus m_minus mr  AC NegPos Percent Divide "
+    "secondnd x2 x3 xy ex tenx btn7 btn8 btn9 times"
+    "oneByX squareRoot cubeRoot yRootX ln logTen btn4 btn5 btn6  neg"
+    "xFact sin cos tan e EE btn1 btn2 btn3 plus"
+    "Rad sinh cosh tanh pi Rand btn0 btn0 btnPoint btnEqual";
+  gap: 1px;
+  box-shadow: 5px 5px 20px 5px #868383;
+}
+.toolbar {
+  grid-area: toolbar;
+  width: 100%;
+  background: none;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  padding: 5px;
+}
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-area: disp;
+  flex: 1;
+  overflow: auto;
+  overflow-y: hidden;
+  height: 57px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+.display span {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 32pt;
+  color: whitesmoke;
+  margin: 5px;
+}
+.btnText {
+  cursor: pointer;
+  color: whitesmoke;
+  font-weight: lighter;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.btn {
+  grid-area: btn;
+  background-color: #858483;
+  padding-top: 16px;
+}
+.btn.pressed {
+  background-color: #b6b6b5;
+}
+.topBtn {
+  background-color: #6d6d6b;
+}
+.topBtn.pressed {
+  background-color: #858483;
+}
+
+.btnRight {
+  background-color: #fb9c0e;
+}
+.btnRight.pressed {
+  background-color: #cb7d06;
+}
+
+.btn0 {
+  grid-area: btn0;
+}
+.bracket_left {
+  grid-area: bracket_left;
+}
+.bracket_right {
+  grid-area: bracket_right;
+}
+
+.mc {
+  grid-area: mc;
+}
+
+.m_plus {
+  grid-area: m_plus;
+}
+.m_minus {
+  grid-area: m_minus;
+}
+.mr {
+  grid-area: mr;
+}
+.AC {
+  grid-area: AC;
+}
+.NegPos {
+  grid-area: NegPos;
+}
+.Percent {
+  grid-area: Percent;
+}
+.Divide {
+  grid-area: Divide;
+}
+.secondnd {
+  grid-area: secondnd;
+}
+.x2 {
+  grid-area: x2;
+}
+.x3 {
+  grid-area: x3;
+}
+.xy {
+  grid-area: xy;
+}
+.ex {
+  grid-area: ex;
+}
+.tenx {
+  grid-area: tenx;
+}
+.Divide {
+  grid-area: Divide;
+}
+
+.btn7 {
+  grid-area: btn7;
+}
+.btn8 {
+  grid-area: btn8;
+}
+.btn9 {
+  grid-area: btn9;
+}
+.times {
+  grid-area: times;
+}
+.btn4 {
+  grid-area: btn4;
+}
+.btn5 {
+  grid-area: btn5;
+}
+.btn6 {
+  grid-area: btn6;
+}
+.neg {
+  grid-area: neg;
+}
+.btn1 {
+  grid-area: btn1;
+}
+.btn2 {
+  grid-area: btn2;
+}
+.btn3 {
+  grid-area: btn3;
+}
+.btnPlus {
+  grid-area: plus;
+}
+.btn0 {
+  grid-area: btn0;
+}
+.btnPoint {
+  grid-area: btnPoint;
+}
+.btnEqual {
+  grid-area: btnEqual;
+  border-radius: 0 0 10px 0;
+}
+
+.Rad {
+  border-radius: 0 0 0 10px;
+}
+
+.minimize {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: #ffbd44;
+  margin: 4px;
+}
+
+.maximize {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: #00ca4e;
+  margin: 4px;
+}
+
+.close {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: #ff605c;
+  margin: 4px;
+}
+/* interactions */
+
+.topRowKeysPressed {
+  background: #858483;
+}
