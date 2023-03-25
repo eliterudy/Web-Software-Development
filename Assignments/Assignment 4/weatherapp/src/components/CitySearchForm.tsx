@@ -7,23 +7,24 @@ const CitySearchForm = ({ callApi }: { callApi: Function }) => {
   const [searchValue, setSearchValue] = useState("");
   return (
     <div className="col col-12 ">
-      <Form>
+      <Form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (searchValue && searchValue.length > 0) callApi(searchValue);
+        }}
+      >
         <InputGroup className="d-flex align-items-center position-relative rounded search-input-group">
           <div className="position-relative z-0 flex-grow-1 ">
             <Form.Control
               type="text"
               placeholder="Search City"
-              className="m-0"
+              className="m-0 pe-4"
               value={searchValue}
-              onChange={(e) =>
-                // console.log("E", e.target.value);
-                setSearchValue(e.target.value)
-              }
+              onChange={(e) => setSearchValue(e.target.value)}
             />
             {searchValue && searchValue.length > 0 && (
               <X
-                className="position-absolute "
-                style={{ top: 6, right: 0, zIndex: 10 }}
+                className="position-absolute  "
                 size={24}
                 color="rgba(255,255,255,0.8)"
                 onClick={() => setSearchValue("")}

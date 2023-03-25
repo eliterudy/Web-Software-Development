@@ -27,6 +27,7 @@ const Weather = () => {
           throw new Error(response.statusText);
         }
         const data = await response.json();
+        console.log(data);
         await setWeatherInfo(data);
       } catch (error: any) {
         await setError(
@@ -60,6 +61,7 @@ const Weather = () => {
             setWeatherInfo(null);
             setIsLoading(false);
             setError(null);
+            setInput("");
           }}
         />
       </div>
