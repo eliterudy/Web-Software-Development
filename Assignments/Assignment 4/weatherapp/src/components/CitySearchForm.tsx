@@ -7,30 +7,33 @@ const CitySearchForm = ({ callApi }: { callApi: Function }) => {
   const [searchValue, setSearchValue] = useState("");
   return (
     <div className="col col-12 ">
-      <Form
-        onSubmit={(e) => {
-          console.log(e.target);
-        }}
-      >
-        <InputGroup className="d-flex align-items-center  rounded search-input-group">
-          <Form.Control
-            type="text"
-            placeholder="Search City"
-            className="m-0"
-            value={searchValue}
-            onChange={(e) =>
-              // console.log("E", e.target.value);
-              setSearchValue(e.target.value)
-            }
-          />
-          {searchValue && searchValue.length > 0 && (
-            <X
-              size={24}
-              color="rgba(255,255,255,0.8)"
-              onClick={() => setSearchValue("")}
+      <Form>
+        <InputGroup className="d-flex align-items-center position-relative rounded search-input-group">
+          <div className="position-relative z-0 flex-grow-1 ">
+            <Form.Control
+              type="text"
+              placeholder="Search City"
+              className="m-0"
+              value={searchValue}
+              onChange={(e) =>
+                // console.log("E", e.target.value);
+                setSearchValue(e.target.value)
+              }
             />
-          )}
-          <Button disabled={searchValue.length < 1} type="submit">
+            {searchValue && searchValue.length > 0 && (
+              <X
+                className="position-absolute "
+                style={{ top: 6, right: 0, zIndex: 10 }}
+                size={24}
+                color="rgba(255,255,255,0.8)"
+                onClick={() => setSearchValue("")}
+              />
+            )}
+          </div>
+          <Button
+            disabled={searchValue.length < 1}
+            onClick={() => callApi(searchValue)}
+          >
             Go
           </Button>
         </InputGroup>

@@ -72,8 +72,9 @@
   }
 
   input:focus {
-    background-color: transparent;
+    background-color: rgba(250, 250, 250, 0.46);
     color: rgba(255, 255, 255, 1);
+    border-radius: 5px 0px 0px 5px;
     box-shadow: none;
   }
 
@@ -88,15 +89,35 @@
     box-shadow: none;
     margin: 0px;
   }
+  button {
+    box-sizing: border-box;
+    margin: 0.2px 0px 0.2px 0px;
+  }
 }
 
 .city-detail-card {
   border: 0px solid transparent;
-  background-color: rgba(250, 250, 250, 0.26);
+  background-color: rgba(250, 250, 250, 0.46);
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
   border-radius: 10px;
   min-height: 400px;
   width: 100%;
   color: black;
+}
+
+.introIconContainer {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: mymove 0.8s infinite alternate;
+}
+
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -20px;
+  }
 }
