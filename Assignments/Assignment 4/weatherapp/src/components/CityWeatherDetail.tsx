@@ -118,12 +118,13 @@ const InfoCard = ({
   }
   return (
     <div className="position-relative d-flex flex-grow-1 info-card">
-      <div className="d-flex flex-grow-1 flex-column justify-content-center align-items-center  gap-2 mt-5 ">
+      <div className="d-flex flex-grow-1 flex-column justify-content-center align-items-center mt-5 ">
         <span className="text-white _title">{`${tempUnits[tempIndex].curr_temp}${tempUnits[tempIndex].term}`}</span>
+        <p className="text-white-50 m-0">{weatherStatus}</p>
         <div className="p-2">
           <img src={icon} alt={weatherStatus} />
         </div>
-        <p className="px-2 text-white m-0">{cityName}</p>
+        <p className="px-2 text-white m-0 h5">{cityName}</p>
         <p className="text-white-50">{`Feels like ${tempUnits[tempIndex].feel_temp}${tempUnits[tempIndex].term}`}</p>
         <div className="col-12 row ">
           <div className="col-12 p-2 col-sm-6 ">
