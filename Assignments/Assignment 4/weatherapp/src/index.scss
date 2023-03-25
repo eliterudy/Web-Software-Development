@@ -27,7 +27,7 @@
 }
 
 .weather-title {
-  font-size: 60px;
+  font-size: 80px;
   color: rgba(255, 255, 255, 1);
 }
 
@@ -61,7 +61,7 @@
   transform: translate(20%, -200%);
 }
 
-.seach-input-group {
+.search-input-group {
   box-shadow: 0 0 2px 3.5px rgba(250, 250, 250, 0.07);
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
@@ -97,5 +97,6 @@
   -webkit-backdrop-filter: blur(10.5px);
   border-radius: 10px;
   min-height: 400px;
+  width: 100%;
   color: black;
 }
